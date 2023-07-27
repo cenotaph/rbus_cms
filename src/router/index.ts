@@ -3,6 +3,14 @@ import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 const routes: Array<RouteRecordRaw> = [
   {
+    path: '/',
+    name: 'home',
+    component: () => import('@/components/HomePage.vue'),
+    meta: {
+      auth: true
+    }
+  },
+  {
     path: '/posts',
     name: 'posts-list',
     component: () => import('@/components/posts/Posts.vue'),

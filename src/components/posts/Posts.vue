@@ -8,6 +8,7 @@ section.section
       thead
         th id
         th Title 
+        th Slug
         th Published?
         th Posted at
         th &nbsp;
@@ -15,6 +16,7 @@ section.section
         tr(v-for="post in posts")
           td {{ post.id }}
           td {{ post.title_en }} / {{  post.title_fi }}
+          td {{ post.slug }}
           td {{ post.published }}
           td {{ post.posted_at }}
           td

@@ -8,6 +8,7 @@ section.section
       thead
         th id
         th Title 
+        th Slug
         th &nbsp;
       tbody
         tr(v-for="page in pages")
@@ -16,6 +17,8 @@ section.section
             | {{ page.title_en }}
             br/
             | {{  page.title_fi }}
+          td  
+            | {{  page.slug }}
           td
             Router-Link.button.is-link(:to="{name: 'page-edit', params: {id: page.id}}") Edit
 </template>

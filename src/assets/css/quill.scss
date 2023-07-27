@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@font-face {
+  font-family: "Intro";
+  font-display: block;
+  src: url("@/assets/fonts/IntroDemoCond-LightCAPS.woff") format("woff");
+}
+
 .ql-snow {
   &.ql-toolbar {
     .ql-formats {
@@ -17,5 +24,21 @@
   }
   .ql-editor {
     height: 400px;
+
+    h1 {
+      font-family: "Intro";
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: "Poppins";
+      font-weight: normal;
+      font-size: 1.333rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-family: "Poppins";
+      margin-bottom: 0.5rem;
+    }
   }
 }
