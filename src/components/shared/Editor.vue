@@ -12,7 +12,7 @@
 //@ts-nocheck
 import { defineComponent, reactive, toRefs } from 'vue'
 import { QuillEditor, Quill } from '@vueup/vue-quill'
-
+import htmlEditButton from 'quill-html-edit-button'
 import ImageUploader from 'quill-image-uploader'
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
 import http from '@/http'
@@ -45,6 +45,7 @@ export default defineComponent({
     let WIClass = new Parchment.Attributor.Class('caps', 'wide-image', blockConfig)
     Quill.register(MClass, true)
     Quill.register(WIClass, true)
+    Quill.register({ 'modules/htmlEditButton': htmlEditButton })
 
     const state = reactive({
       quillToolbar: [
@@ -65,9 +66,17 @@ export default defineComponent({
         [{ align: [] }],
 
         ['clean'],
-        ['image', 'video', 'link']
+        ['image', 'video', 'link'],
+        ['wide-image']
       ],
       modules: [
+        {
+          name: 'htmlEditButton',
+          module: htmlEditButton,
+          options: {
+            debug: false
+          }
+        },
         {
           name: 'imageUploader',
           module: ImageUploader,

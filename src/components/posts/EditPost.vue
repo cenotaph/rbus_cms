@@ -41,6 +41,10 @@ section.section
       button.is-secondary.button(v-if="needsBanner" @click="uploadImage") Upload image
     .field
       label.checkbox
+        input(type='checkbox' v-model='post.hide_banner_on_view')
+        | Hide banner image on standalone post page?      
+    .field
+      label.checkbox
         input(type='checkbox' v-model='post.published')
         | Published?
     div(v-if='errors')

@@ -7,6 +7,7 @@ export interface Post {
   published: boolean
   posted_at: Date
   slug: string
+  hide_banner_on_view: boolean
   created_at: Date
   updated_at: Date
 }
